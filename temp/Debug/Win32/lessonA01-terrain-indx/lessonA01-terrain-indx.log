@@ -1,0 +1,47 @@
+﻿D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: 正在首次将属性“IntermediateOutputPath”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+D:\vs2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: 正在首次将属性“CleanFile”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  glew.c
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  lessonA01.cpp
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Camera3rd.h(49,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Camera3rd.h(50,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(39,38): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(63,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(64,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(65,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(67,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(68,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\Terrain.hpp(69,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\lessonA01.cpp(251,41): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\lessonA01.cpp(262,1): warning C4305: “-=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\lessonA01.cpp(265,1): warning C4305: “+=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\lessonA01.cpp(268,1): warning C4305: “-=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\lessonA01.cpp(271,1): warning C4305: “+=”: 从“double”到“float”截断
+D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1278,5): warning MSB8012: TargetPath(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\../../temp/Debug/Win32/lessonA01-terrain-indx\lessonA01-terrain-indx.exe) 与 Linker 的 OutputFile 属性值(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\bin\DebugWin32\lessonA01-terrain-indx.exe)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
+glew.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  lessonA01-terrain-indx.vcxproj -> D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA01-terrain-indx\../../temp/Debug/Win32/lessonA01-terrain-indx\lessonA01-terrain-indx.exe

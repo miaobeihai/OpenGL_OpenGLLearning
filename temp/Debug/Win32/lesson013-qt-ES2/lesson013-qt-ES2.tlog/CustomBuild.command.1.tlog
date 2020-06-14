@@ -1,0 +1,10 @@
+^D:\SIKI\OPENGL实战编码设计视频课程1.0\OPENGL实战编码设计视频课程\OPENGL-01\SOURCE\LESSON013-QT-ES2\MYCLASS.H
+"\bin\moc.exe"  "D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson013-qt-ES2\myclass.h" -o ".\GeneratedFiles\Debug\moc_myclass.cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB  "-I.\GeneratedFiles" "-I." "-I\include" "-I.\GeneratedFiles\Debug\." "-I\include\QtCore" "-I\include\QtGui" "-I.\..\..\Dependencies\include"
+^D:\SIKI\OPENGL实战编码设计视频课程1.0\OPENGL实战编码设计视频课程\OPENGL-01\SOURCE\LESSON013-QT-ES2\QOPENGLES2WIDGET.H
+"\bin\moc.exe"  "D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson013-qt-ES2\qopengles2widget.h" -o ".\GeneratedFiles\Debug\moc_qopengles2widget.cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB  "-I.\GeneratedFiles" "-I." "-I\include" "-I.\GeneratedFiles\Debug\." "-I\include\QtCore" "-I\include\QtGui" "-I.\..\..\Dependencies\include"
+^D:\SIKI\OPENGL实战编码设计视频课程1.0\OPENGL实战编码设计视频课程\OPENGL-01\SOURCE\LESSON013-QT-ES2\MYCLASS.QRC
+"\bin\rcc.exe" -name "myclass" -no-compress "D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson013-qt-ES2\myclass.qrc" -o .\GeneratedFiles\qrc_myclass.cpp
+^D:\SIKI\OPENGL实战编码设计视频课程1.0\OPENGL实战编码设计视频课程\OPENGL-01\SOURCE\LESSON013-QT-ES2\MYCLASS.UI
+"\bin\uic.exe" -o ".\GeneratedFiles\ui_myclass.h" "D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson013-qt-ES2\myclass.ui"
+^D:\SIKI\OPENGL实战编码设计视频课程1.0\OPENGL实战编码设计视频课程\OPENGL-01\SOURCE\LESSON013-QT-ES2\QOPENGLES2WIDGET.UI
+"\bin\uic.exe" -o ".\GeneratedFiles\ui_qopengles2widget.h" "D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson013-qt-ES2\qopengles2widget.ui"

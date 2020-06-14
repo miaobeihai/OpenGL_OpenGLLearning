@@ -1,0 +1,17 @@
+﻿D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: 正在首次将属性“IntermediateOutputPath”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+D:\vs2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: 正在首次将属性“CleanFile”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  glew.c
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  lesson308.cpp
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\CELLMath.hpp(2623,21): warning C4244: “初始化”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\CELLMath.hpp(2622): message : 在编译 类 模板 成员函数“CELL::tmat4x4<float> &CELL::tmat4x4<float>::rotate(float,const CELL::tvec3<float> &)”时
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\lesson308.cpp(96): message : 查看对正在编译的函数 模板 实例化“CELL::tmat4x4<float> &CELL::tmat4x4<float>::rotate(float,const CELL::tvec3<float> &)”的引用
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\lesson308.cpp(92): message : 查看对正在编译的 类 模板 实例化“CELL::tmat4x4<float>”的引用
+D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1278,5): warning MSB8012: TargetPath(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\../../temp/Debug/Win32/lesson308-矩阵的应用太阳系2\lesson308-矩阵的应用太阳系2.exe) 与 Linker 的 OutputFile 属性值(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\bin\DebugWin32\lesson308-矩阵的应用太阳系2.exe)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
+glew.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  lesson308-矩阵的应用太阳系2.vcxproj -> D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson308-矩阵的应用太阳系2\../../temp/Debug/Win32/lesson308-矩阵的应用太阳系2\lesson308-矩阵的应用太阳系2.exe

@@ -1,0 +1,47 @@
+﻿D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: 正在首次将属性“IntermediateOutputPath”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+D:\vs2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: 正在首次将属性“CleanFile”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  glew.c
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  lessonA08.cpp
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Camera.h(90,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Camera.h(91,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(44,29): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(132,42): warning C4838: 从“int”转换到“float”需要收缩转换
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(132,42): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(132,68): warning C4838: 从“int”转换到“float”需要收缩转换
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(132,68): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(163,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(164,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(165,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(167,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(168,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\Terrain.hpp(169,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=unsigned short
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\lessonA08.cpp(275,41): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1278,5): warning MSB8012: TargetPath(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\../../temp/Debug/Win32/lessonA08-terrain-fc\lessonA08-terrain-fc.exe) 与 Linker 的 OutputFile 属性值(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\bin\DebugWin32\lessonA08-terrain-fc.exe)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
+glew.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  lessonA08-terrain-camera.vcxproj -> D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lessonA08-terrain-camera\../../temp/Debug/Win32/lessonA08-terrain-fc\lessonA08-terrain-fc.exe

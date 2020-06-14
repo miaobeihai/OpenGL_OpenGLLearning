@@ -1,0 +1,72 @@
+﻿D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: 正在首次将属性“IntermediateOutputPath”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+D:\vs2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: 正在首次将属性“CleanFile”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  glew.c
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  lesson906.cpp
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\GLContext.h(3,1): warning C4005: “STRICT”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(23): message : 参见“STRICT”的前一个定义
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\Camera3rd.h(49,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\Camera3rd.h(50,25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(114,25): error C2065: “pos”: 未声明的标识符
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(129,56): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(129,46): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(158,56): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(158,46): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(174,56): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(174,46): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(248,9): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(257,9): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(487,74): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(487,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(576,60): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(576,47): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(595,60): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(595,47): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+          with
+          [
+              T=CELL::real
+          ]
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(627,41): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(634,41): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(635,41): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(649,1): warning C4305: “-=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(652,1): warning C4305: “+=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(655,1): warning C4305: “-=”: 从“double”到“float”截断
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson906-button\lesson906.cpp(658,1): warning C4305: “+=”: 从“double”到“float”截断

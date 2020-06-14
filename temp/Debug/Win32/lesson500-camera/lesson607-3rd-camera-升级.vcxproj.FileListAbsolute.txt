@@ -1,0 +1,2 @@
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\temp\Debug\Win32\lesson500-camera\lesson500-camera.pdb
+D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\bin\debugWin32\lesson500-camera.pdb
