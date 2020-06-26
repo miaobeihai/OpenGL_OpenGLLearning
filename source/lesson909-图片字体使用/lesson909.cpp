@@ -1,0 +1,447 @@
+
+#include <windows.h>
+#include <tchar.h>
+#include <math.h>
+
+#include "FreeImage.h"
+
+
+#include "CELLMath.hpp"
+
+#include "OpenGLWindow.h"
+#include "Camera3rd.h"
+#include "FreetypeFont.h"
+#include <vector>
+using namespace CELL;
+
+struct Vertex
+{ 
+    float x, y, z;
+    float u, v;
+};
+
+struct VertexNormal
+{ 
+    float x, y, z;
+    float nx,ny,nz;
+};
+
+struct GroundVertex
+{ 
+    float x, y, z;
+    float u,v;
+};
+
+
+class   SamplerTexture :public OpenGLWindow
+{
+    GLuint  _texture;
+
+    GLuint  _texGround;
+
+    Camera3rd  _camera;
+    int2    _mouseDown;
+    bool    _bDownFlag;
+
+
+    float3  _rolePos;
+    float3  _moveTo;
+    float   _angle;
+    FreeTypeFont*_font;
+
+    FreeTypeFont*_font43;
+public:
+    SamplerTexture() 
+    {
+        _bDownFlag  =   false;
+        _rolePos    =   float3(0,0,0);
+        _moveTo     =   _rolePos;
+        _angle      =   0;
+    }         
+    /**
+    *   使用FreeImage加载图片
+    */
+    unsigned        createTextureFromImage(const char* fileName)
+    {
+        //1 获取图片格式
+        FREE_IMAGE_FORMAT fifmt = FreeImage_GetFileType(fileName, 0);
+        if (fifmt == FIF_UNKNOWN)
+        {
+            return  0;
+        }
+        //2 加载图片
+        FIBITMAP    *dib = FreeImage_Load(fifmt, fileName,0);
+     
+        FREE_IMAGE_COLOR_TYPE type    =   FreeImage_GetColorType(dib);
+      
+        //! 获取数据指针
+        FIBITMAP*   temp    =   dib;
+        dib =   FreeImage_ConvertTo32Bits(dib);
+                FreeImage_Unload(temp);
+
+        BYTE*   pixels =   (BYTE*)FreeImage_GetBits(dib);
+        int     width   =   FreeImage_GetWidth(dib);
+        int     height  =   FreeImage_GetHeight(dib);
+
+        for (int i = 0 ;i < width * height * 4 ; i+=4 )
+        {
+            BYTE temp       =   pixels[i];
+            pixels[i]       =   pixels[i + 2];
+            pixels[i + 2]   =   temp;
+        }
+
+        unsigned    res =   createTexture(width,height,pixels);
+        FreeImage_Unload(dib);
+        return      res;
+    }
+
+    unsigned        createTexture(int w,int h,const void* data)
+    {
+        unsigned    texId;
+        glGenTextures(1,&texId);
+        glBindTexture(GL_TEXTURE_2D,texId);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+        glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,w,h,0,GL_RGBA,GL_UNSIGNED_BYTE,data);
+
+        return  texId;
+    }
+
+    
+    virtual void    onInitGL()
+    {
+        _texture    =   createTextureFromImage("2.jpg");
+        _texGround  =   createTextureFromImage("1.jpg");
+
+        glEnable(GL_DEPTH_TEST);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_LIGHT0);
+
+        GLfloat diffuse_light0[]    = { 1.0f, 1.0f, 1.0f, 1.0f };
+        GLfloat position_light0[]   = { 0, 10, 0, 0.0f };
+        glLightfv( GL_LIGHT0, GL_DIFFUSE, diffuse_light0 );
+        glLightfv( GL_LIGHT0, GL_POSITION, position_light0 );
+
+        _font   =   new FreeTypeFont();
+        _font->create("simsun.ttc",16,512,512);
+
+        _font43 =   new FreeTypeFont();
+
+        _font43->load("test");
+
+    }
+
+    
+    virtual void    renderNormalCube(const matrix4& mvp)
+    {
+        VertexNormal cubeVertices[] =
+        {
+            {+1.0,-1.0,+1.0,    1.0, 0.0, 0.0}, 
+            {+1.0,-1.0,-1.0,    1.0, 0.0, 0.0},
+            {+1.0,+1.0,-1.0,    1.0, 0.0, 0.0},
+            {+1.0,+1.0,+1.0,    1.0, 0.0, 0.0},
+
+            {+1.0,+1.0,+1.0,    0.0, 1.0, 0.0},  
+            {+1.0,+1.0,-1.0,    0.0, 1.0, 0.0},  
+            {-1.0,+1.0,-1.0,    0.0, 1.0, 0.0},  
+            {-1.0,+1.0,+1.0,    0.0, 1.0, 0.0}, 
+
+            {+1.0,+1.0,+1.0,    0.0, 0.0, 1.0},  
+            {-1.0,+1.0,+1.0,    0.0, 0.0, 1.0}, 
+            {-1.0,-1.0,+1.0,    0.0, 0.0, 1.0}, 
+            {+1.0,-1.0,+1.0,    0.0, 0.0, 1.0}, 
+
+            {-1.0,-1.0,+1.0,   -1.0, 0.0, 0.0}, 
+            {-1.0,+1.0,+1.0,   -1.0, 0.0, 0.0},  
+            {-1.0,+1.0,-1.0,   -1.0, 0.0, 0.0},  
+            {-1.0,-1.0,-1.0,   -1.0, 0.0, 0.0}, 
+
+            {-1.0,-1.0,+1.0,    0.0,-1.0, 0.0},  
+            {-1.0,-1.0,-1.0,    0.0,-1.0, 0.0},  
+            {+1.0,-1.0,-1.0,    0.0,-1.0, 0.0},  
+            {+1.0,-1.0,+1.0,    0.0,-1.0, 0.0}, 
+
+            {-1.0,-1.0,-1.0,    0.0, 0.0,-1.0},  
+            {-1.0,+1.0,-1.0,    0.0, 0.0,-1.0},  
+            {+1.0,+1.0,-1.0,    0.0, 0.0,-1.0},  
+            {+1.0,-1.0,-1.0,    0.0, 0.0,-1.0}, 
+        };
+
+        glDisable(GL_TEXTURE_2D);
+        glEnable(GL_LIGHTING);
+        
+        glMatrixMode(GL_MODELVIEW);
+        glLoadMatrixf(mvp.data());
+
+        glRotatef(_angle,1,1,1);
+        _angle  +=  0.1f;
+        
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_NORMAL_ARRAY);
+        glVertexPointer(3,GL_FLOAT,         sizeof(VertexNormal),     &cubeVertices[0].x);
+        glNormalPointer(GL_FLOAT,           sizeof(VertexNormal),     &cubeVertices[0].nx);
+
+        glDrawArrays( GL_QUADS, 0, 24 );
+        glDisableClientState(GL_NORMAL_ARRAY);
+        glDisable(GL_LIGHTING);
+
+    }
+
+
+    
+    virtual void    renderRole(const matrix4& mvp)
+    {
+        Vertex cubeVertices[] =
+        {
+            {  -1.0f,-1.0f, 1.0f    ,0.3f,  0.3f },
+            {  1.0f,-1.0f, 1.0f     ,0.5f,  0.3f },
+            {  1.0f, 1.0f, 1.0f     ,0.5f,  0.8f },
+            { -1.0f, 1.0f, 1.0f     ,0.3f,  0.8f },
+
+            {  -1.0f,-1.0f,-1.0f    ,0,  0 },
+            {  -1.0f, 1.0f,-1.0f    ,1,  0 },
+            {  1.0f, 1.0f,-1.0f     ,1,  1 },
+            {  1.0f,-1.0f,-1.0f     ,0,  1 },
+
+            {  -1.0f, 1.0f,-1.0f    ,0,  0 },
+            {  -1.0f, 1.0f, 1.0f    ,1,  0 },
+            {  1.0f, 1.0f, 1.0f     ,1,  1 },
+            {  1.0f, 1.0f,-1.0f     ,0,  1 },
+
+            {  -1.0f,-1.0f,-1.0f    ,0,  0 },
+            {  1.0f,-1.0f,-1.0f     ,1,  0 },
+            {  1.0f,-1.0f, 1.0f     ,1,  1 },
+            {  -1.0f,-1.0f, 1.0f    ,0,  1 },
+
+            {  1.0f,-1.0f,-1.0f ,   0,  0 },
+            {  1.0f, 1.0f,-1.0f ,   1,  0 },
+            {  1.0f, 1.0f, 1.0f ,   1,  1 },
+            {  1.0f,-1.0f, 1.0f ,   0,  1 },
+
+            {  -1.0f,-1.0f,-1.0f ,  0,  0 },
+            {  -1.0f,-1.0f, 1.0f ,  1,  0 },
+            {  -1.0f, 1.0f, 1.0f ,  1,  1 },
+            {  -1.0f, 1.0f,-1.0f ,  0,  1 },
+        };
+
+        glLoadMatrixf(mvp.data());
+
+        //! 产生一个矩阵
+        glTranslatef(_rolePos.x,_rolePos.y,_rolePos.z);
+
+        glBindTexture(GL_TEXTURE_2D,_texture);
+        glDisable(GL_LIGHTING);
+        glEnable(GL_TEXTURE_2D);
+
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+            glVertexPointer(3,GL_FLOAT,         sizeof(Vertex),     &cubeVertices[0].x);
+            glTexCoordPointer(2,GL_FLOAT,       sizeof(Vertex),     &cubeVertices[0].u);
+
+        glDrawArrays( GL_QUADS, 0, 24 );
+        glDisableClientState(GL_VERTEX_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    }
+
+
+    
+    virtual void    renderGround(const matrix4& mvp)
+    {
+        float   size    =   100;
+
+        Vertex  ground[] =
+        {
+            {  -size, -1,   -size       ,0,  0  },
+            {  -size, -1,   size        ,100,0  },
+            {  size,  -1,   size        ,100,100},
+            {  size,  -1,   -size       ,0,  100},
+        };
+
+        glEnable(GL_TEXTURE_2D);
+        glDisable(GL_LIGHTING);
+
+
+        glBindTexture(GL_TEXTURE_2D,_texGround);
+
+        glLoadMatrixf(mvp.data());
+
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+        glVertexPointer(3,GL_FLOAT,         sizeof(Vertex),     &ground[0].x);
+        glTexCoordPointer(2,GL_FLOAT,       sizeof(Vertex),     &ground[0].u);
+
+
+        glDrawArrays(GL_QUADS,0,4);
+    }
+    
+
+    virtual void    renderGUI()
+    {
+
+        _font->begin(_width,_height);
+
+        _font->drawText(100,100,0,Rgba(255,255,255),L"文本的绘制",0,0,0);
+
+        _font->drawText(100,200,0,Rgba(255,0,0),L"文本的绘制",0,0,0);
+
+
+        _font->drawText(100,300,0,Rgba(255,0,255),L"文本的绘制",0,0,0);
+        _font->drawText(100,400,0,Rgba(0,0,255),L"文本的绘制",0,0,0);
+
+        _font->end();
+        {
+            _font43->begin(_width,_height);
+
+            _font43->drawText(300,100,0,Rgba(255,255,255),L"文本的绘制",0,0,0);
+
+            _font43->drawText(300,200,0,Rgba(255,0,0),L"文本的绘制",0,0,0);
+
+
+            _font43->drawText(300,300,0,Rgba(255,0,255),L"文本的绘制",0,0,0);
+            _font43->drawText(300,400,0,Rgba(0,0,255),L"文本的绘制",0,0,0);
+
+            _font43->end();
+        }
+    }
+
+    virtual void    render()
+    {
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+
+        glMatrixMode(GL_MODELVIEW);
+
+        _camera.perspective(60,float(_width)/float(_height),0.1f,1000.0f);
+
+        float3  dir =   normalize(_moveTo - _rolePos);
+
+        if (length(_moveTo - _rolePos) < 1)
+        {
+            _rolePos    =   _moveTo;
+        }
+        else
+        {
+            _rolePos    +=  dir * (10.0f/60.0f);
+        }
+
+        _camera.updateLookat(_rolePos);
+        _camera.update();
+
+        matrix4 matVP  =   _camera.getMVP();
+
+        renderNormalCube(matVP);
+        renderRole(matVP);
+        renderGround(matVP);
+
+        renderGUI();
+    }
+
+
+    
+    
+    virtual LRESULT events(HWND hWnd,UINT msgId, WPARAM wParam, LPARAM lParam)
+    {
+        switch (msgId)
+        {
+        case WM_SIZE:
+            {
+                if (::IsWindow(hWnd))
+                {
+                    RECT    rt;
+                    GetClientRect(_hWnd,&rt);
+                    int     w   =   rt.right - rt.left;
+                    int     h   =   rt.bottom - rt.top;
+                    glViewport(0,0,w ,h );
+                    _camera.setView(w,h);
+                }
+            }
+            break;
+        case WM_LBUTTONDOWN:
+            {
+                _bDownFlag  =   true;
+                _mouseDown  =   int2(LOWORD(lParam),HIWORD(lParam));
+
+                CELL::Ray   ray     =   _camera.createRayFromScreen(_mouseDown.x,_mouseDown.y);
+                float3      orth    =   ray.getOrigin();
+                float       tm      =   (orth.y  + 1)/ray.getDirection().y;
+                float3      c       =   ray.getOrigin() + abs(tm) * ray.getDirection();
+                _moveTo =   c;
+            }
+            break;
+        case WM_LBUTTONUP:
+            {
+                _bDownFlag  =   false;
+            }
+            break;
+
+        case WM_MOUSEWHEEL:
+            {
+                int delta   =   (short)HIWORD(wParam);
+                if (delta > 0)
+                {
+                    _camera.setRadius(_camera.getRadius() * 1.2f);
+                }
+                else
+                {
+                    _camera.setRadius(_camera.getRadius() * 0.8f);
+                }
+            }
+            break;
+
+        case WM_MOUSEMOVE:
+            {
+                if (_bDownFlag)
+                {
+                    int2    mouseCur    =  int2(LOWORD(lParam),HIWORD(lParam));
+                    float   xOffset     =  mouseCur.x - _mouseDown.x;
+                    _mouseDown  =   mouseCur;
+                    _camera.rotateY(xOffset * 0.5f);
+                }
+            }
+            break;
+        case WM_KEYDOWN:
+            {
+                switch (wParam)
+                {
+                case VK_LEFT:
+                    _rolePos.x  -=  0.1;
+                    break;
+                case VK_RIGHT:
+                    _rolePos.x  +=  0.1;
+                    break;
+                case  VK_UP:
+                    _rolePos.z  -=  0.1;
+                    break;
+                case VK_DOWN:
+                    _rolePos.z  +=  0.1;
+                    break;
+                case 'S':
+                case 's':
+                    _font43->save("test");
+                    break;
+                }
+            }
+            break;
+        }
+        return  __super::events(hWnd,msgId,wParam,lParam);
+    }
+};
+
+
+int __stdcall WinMain( 
+                      HINSTANCE hInstance, 
+                      HINSTANCE hPrevInstance, 
+                      LPSTR lpCmdLine, 
+                      int nShowCmd
+                      )
+{
+
+    SamplerTexture    instance;
+    instance.main(800,600);
+
+
+    return  0;
+}

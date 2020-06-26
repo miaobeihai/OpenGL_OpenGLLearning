@@ -1,0 +1,23 @@
+<UI version="4.0" >
+ <class>QOpenGLES2Widget</class>
+ <widget class="QWidget" name="QOpenGLES2Widget" >
+  <property name="objectName" >
+   <string notr="true">QOpenGLES2Widget</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>QOpenGLES2Widget</string>
+  </property>  
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources/>
+ <connections/>
+</UI>
