@@ -1,9 +1,0 @@
-﻿D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: 正在首次将属性“IntermediateOutputPath”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
-D:\vs2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: 正在首次将属性“CleanFile”设置为某个值，但已在“D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)”处使用了该属性。
-cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
-  glew.c
-cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
-  lesson405.cpp
-D:\vs2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1278,5): warning MSB8012: TargetPath(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson405-纹理包装\../../temp/Debug/Win32/lesson405-纹理包装\lesson405-纹理包装.exe) 与 Linker 的 OutputFile 属性值(D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\bin\DebugWin32\lesson405-纹理包装.exe)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
-glew.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
-  lesson405-纹理包装.vcxproj -> D:\Siki\OpenGL实战编码设计视频课程1.0\OpenGL实战编码设计视频课程\OpenGL-01\source\lesson405-纹理包装\../../temp/Debug/Win32/lesson405-纹理包装\lesson405-纹理包装.exe
